@@ -18,7 +18,7 @@ class MessageParser {
     async sendUserInputToAPI(userInput) {
         const apiUrl = 'https://v864x25fk1.execute-api.ap-south-1.amazonaws.com/stage-dev/genie';
         const apiKey = 'RWnmy0wm5h53Ci79VayfB6lvv4H5av6i1uX5IS6r';
-        const email = 'ajit.bhosale@piramal.com';
+        const email = {emailID};
 
         const requestData = {
             query: userInput,

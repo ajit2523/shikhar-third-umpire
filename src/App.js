@@ -11,7 +11,7 @@ import config, { setEmailID } from './config';
 import { setEmail } from './MessageParser'; 
 
 function App() {
-  // useMsalAuthentication(InteractionType.Redirect);
+  useMsalAuthentication(InteractionType.Redirect);
   const [m_strUser, setm_strUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,32 +31,32 @@ function App() {
     }
   }
 
-  // if (m_strUser !== "") {
-  //   setEmailID(m_strUser);
-  //   setEmail(m_strUser);
-  //   return (
-  //     <div className="App">
+  if (m_strUser !== "") {
+    setEmailID(m_strUser);
+    setEmail(m_strUser);
+    return (
+      <div className="App">
 
-  //       <header className="App-header">
-  //         {/* <Navbar /> */}
-  //         <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
-  //       </header>
-  //     </div>
-  //   );
-  // }
-  // else {
-  //   return <>{Render()}<div style={{ textAlign:'center'}}>Please wait...</div></>
-  // }
+        <header className="App-header">
+          {/* <Navbar /> */}
+          <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+        </header>
+      </div>
+    );
+  }
+  else {
+    return <>{Render()}<div style={{ textAlign:'center'}}>Please wait...</div></>
+  }
 
-  return (
-    <div className="App">
+  // return (
+  //   <div className="App">
 
-      <header className="App-header">
-        {/* <Navbar /> */}
-        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
-      </header>
-    </div>
-  );
+  //     <header className="App-header">
+  //       {/* <Navbar /> */}
+  //       <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+  //     </header>
+  //   </div>
+  // );
 }
 
 export default App;
