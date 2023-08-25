@@ -1,38 +1,189 @@
+/* App.css */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.react-chatbot-kit-chat-container {
+  width: 100vw;
+  height: 95vh;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: auto;
+}
+
+.App .react-chatbot-kit-chat-inner-container {
+  padding: 20px;
+  height: 82vh;
+  /* background-image: url("./Piramal-Finance-Logo.png");
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.react-chatbot-kit-chat-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.react-chatbot-kit-chat-message-container {
+  overflow-y: auto;
+  padding-right: 10px;
+  height: 100%;
+}
+
+.react-chatbot-kit-chat-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: -20px;
+}
+
+
+.react-chatbot-kit-chat-input {
+  flex: 1;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.react-chatbot-kit-chat-btn-send {
   color: white;
+  margin-left: 8px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.react-chatbot-kit-chat-btn-send:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-chatbot-kit-chat-bot-message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  max-width: 100%;
 }
+
+.react-chatbot-kit-chat-bot-avatar-container {
+  margin-right: 10px;
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  text-align: left;
+  margin: 0;
+  color: #272727;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+/* Loader styles */
+/* .chatbot-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#chatbot-loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+#chatbot-loader #chatbot-loader-dot1,
+#chatbot-loader #chatbot-loader-dot2,
+#chatbot-loader #chatbot-loader-dot3 {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #007bff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+  animation: chatbot-loader-animation 0.6s infinite;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+  animation: chatbot-loader-animation 0.6s infinite;
+  left: 6px;
+  top: 6px;
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+  animation: chatbot-loader-animation 0.6s infinite;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+}
+
+@keyframes chatbot-loader-animation {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+} */
+
+/* Error styles */
+.react-chatbot-kit-error {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.react-chatbot-kit-error-container {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.react-chatbot-kit-error-header {
+  font-weight: bold;
+}
+
+.react-chatbot-kit-error-docs {
+  margin-top: 10px;
+}
+
+
+.bot-avatar {
+  border-radius: 50%;
+  padding-right: 5px;
+  width: 50px;
+  height: 50px;
+}
+
