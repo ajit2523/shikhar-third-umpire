@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a09258e3.css",
+    "main.js": "/static/js/main.55113da4.js",
+    "static/js/787.5b255ad6.chunk.js": "/static/js/787.5b255ad6.chunk.js",
+    "static/media/Piramal-Finance-Logo-removebg-preview.png": "/static/media/Piramal-Finance-Logo-removebg-preview.434e697d33606a71e714.png",
+    "index.html": "/index.html",
+    "main.a09258e3.css.map": "/static/css/main.a09258e3.css.map",
+    "main.55113da4.js.map": "/static/js/main.55113da4.js.map",
+    "787.5b255ad6.chunk.js.map": "/static/js/787.5b255ad6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a09258e3.css",
+    "static/js/main.55113da4.js"
+  ]
+}
