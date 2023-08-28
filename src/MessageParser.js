@@ -48,10 +48,10 @@ class MessageParser {
                             {responseArray.map((i, key) => {
                                 return <div key={key}>{Object.keys(i).map((j, key) => {
                                     //if key is 'answer' then show only the value
-                                    if (j === 'answer') {
+                                    if (j === 'Answer') {
                                         return <div key={key}>{i[j]}</div>;
                                     }
-                                    else {return <div key={key}>{j} : {i[j]}</div>;}
+                                    else { return <div key={key}>{j} : {i[j]}</div>; }
                                 })}
                                     <br />
                                 </div>;
@@ -77,12 +77,88 @@ class MessageParser {
     parse(message) {
         const query = message.toLowerCase();
 
-        const greetings = ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'good night'];
+        const greetings = ["Hello",
+            "Hi",
+            "Hey",
+            "Greetings",
+            "Good morning",
+            "Good afternoon",
+            "Good evening",
+            "Hi there",
+            "What's up?",
+            "Yo",
+            "Hiya",
+            "Wassup?",
+            "Hey there",
+            "How's it going?",
+            "Sup?",
+            "How are you?",
+            "How's everything?",
+            "How's your day?",
+            "How do you do?",
+            "What's new?",
+            "Hi, friend",
+            "Namaste",
+            "Salaam",
+            "G'day",
+            "What's happening?"];
+
+        const goodbyes = ["Bye",
+        "Goodbye",
+        "Farewell",
+        "See you later",
+        "See you soon",
+        "Catch you later",
+        "Later",
+        "Take care",
+        "Have a nice day",
+        "Have a great day",
+        "Have a good one",
+        "See you around",
+        "Adios",
+        "Ciao",
+        "Ta-ta",
+        "Peace out",
+        "I'm out",
+        "So long",
+        "Until we meet again",
+        "Fare thee well",
+        "Goodnight",
+        "Night",
+        "Sleep well",
+        "Sweet dreams",
+        "Take it easy",
+        "Be safe",
+        "Bon voyage",
+        "Godspeed",
+        "Adieu",
+        "Bye-bye",
+        "Later gator",
+        "Hasta la vista",
+        "Smell you later",
+        "Peace and love",
+        "To infinity and beyond",
+        "Keep in touch",
+        "Toodle-oo",
+        "Take good care of yourself",
+        "See you on the flip side",
+        "Bonsoir",
+        "Goodbye for now",
+        "It's been a pleasure"];
+
+        //change all the elements of the array to lowercase
+        greetings.forEach(function (element, index, array) {
+            array[index] = element.toLowerCase();
+        });
+
+        goodbyes.forEach(function (element, index, array) {
+            array[index] = element.toLowerCase();
+        });
 
         if (greetings.some(greeting => query.includes(greeting))) {
             const botResponse = createChatBotMessage('Hello! How can I assist you today?');
             this.actionProvider.setChatbotResponse(botResponse);
-        } else if (query.includes('quit')) {
+        } else if (goodbyes.some(goodbye => query.includes(goodbye))) {
             const botResponse = createChatBotMessage('Thank you for using the chatbot. Have a nice day!');
             this.actionProvider.setChatbotResponse(botResponse);
         } else if (query.trim() === '') {
