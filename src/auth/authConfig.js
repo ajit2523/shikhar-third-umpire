@@ -4,7 +4,7 @@ export const msalConfig = {
     auth: {
         clientId: '95961bd9-f451-4ece-82ec-b993b358bab4',
         authority: 'https://login.microsoftonline.com/b8fb8be4-f50e-4989-96c3-41eb135ec147',
-        redirectUri: 'http://localhost:3000', // Redirect URI configured in Azure AD
+        redirectUri: 'https://dev8632.d559hhueem5fq.amplifyapp.com/', // Redirect URI configured in Azure AD
     },
     cache: {
         cacheLocation: "sessionStorage",

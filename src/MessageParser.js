@@ -18,12 +18,13 @@ class MessageParser {
     async sendUserInputToAPI(userInput) {
         const apiUrl = 'https://v864x25fk1.execute-api.ap-south-1.amazonaws.com/stage-dev/genie';
         const apiKey = 'RWnmy0wm5h53Ci79VayfB6lvv4H5av6i1uX5IS6r';
-        const email = {emailID};
-
+        const email = emailID.toLowerCase();
+        console.log(email)
         const requestData = {
             query: userInput,
             user: email,
         };
+        console.log(requestData)
 
         try {
 
@@ -46,7 +47,11 @@ class MessageParser {
                         <div>
                             {responseArray.map((i, key) => {
                                 return <div key={key}>{Object.keys(i).map((j, key) => {
-                                    return <div key={key}>{j} : {i[j]}</div>;
+                                    //if key is 'answer' then show only the value
+                                    if (j === 'answer') {
+                                        return <div key={key}>{i[j]}</div>;
+                                    }
+                                    else {return <div key={key}>{j} : {i[j]}</div>;}
                                 })}
                                     <br />
                                 </div>;
@@ -72,8 +77,12 @@ class MessageParser {
     parse(message) {
         const query = message.toLowerCase();
 
+        const greetings = ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'good night'];
 
-        if (query.includes('quit')) {
+        if (greetings.some(greeting => query.includes(greeting))) {
+            const botResponse = createChatBotMessage('Hello! How can I assist you today?');
+            this.actionProvider.setChatbotResponse(botResponse);
+        } else if (query.includes('quit')) {
             const botResponse = createChatBotMessage('Thank you for using the chatbot. Have a nice day!');
             this.actionProvider.setChatbotResponse(botResponse);
         } else if (query.trim() === '') {

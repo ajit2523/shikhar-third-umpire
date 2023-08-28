@@ -5,7 +5,7 @@ import UserAvatar from "./components/UserAvatar";
 
 
 const botName = "Genie";
-let emailID = 'Parag.Bajaj@piramal.com'
+let emailID = ''
 
 export const setEmailID = (userEmail) => {
   emailID = userEmail;
@@ -58,7 +58,7 @@ const config = {
         alignItems: 'center', // Vertically center elements within this container
       }}
     >
-      <div style={{ paddingRight: '10px', fontSize: '15px',color:'#1e3446' }}>
+      <div style={{ paddingRight: '10px', fontSize: '0.75rem',color:'#1e3446' }}>
         {emailID}
       </div>
       <div style={{ paddingRight: '10px', fontSize: '15px' }}>
