@@ -4,7 +4,7 @@ import History from "./components/History";
 import UserAvatar from "./components/UserAvatar";
 
 
-const botName = "Genie";
+const botName = "Shikhar Third Umpire";
 let emailID = ''
 
 export const setEmailID = (userEmail) => {
@@ -16,7 +16,7 @@ const config = {
   initialMessages: [
     <History />,
     createChatBotMessage(<div>
-      Hi! I'm {botName}
+      Hi! This is {botName}
       <br />
       How can I help you?
     </div>)],
@@ -52,23 +52,30 @@ const config = {
           alt="Piramal Finance"
           style={{ height: '40px', paddingLeft: '20px' }} // Add margin to separate the logo from text
         />
+        <div>
+          <img
+            src={require('./shikhar_logo-removebg-preview.png')}
+            alt="Shikhar"
+            style={{ height: '40px', paddingRight: '20px' }} // Add margin to separate the logo from text
+          />
+        </div>
         <div
-      style={{
-        display: 'flex',
-        alignItems: 'center', // Vertically center elements within this container
-      }}
-    >
-      <div style={{ paddingRight: '10px', fontSize: '0.75rem',color:'#1e3446' }}>
-        {emailID}
-      </div>
-      <div style={{ paddingRight: '10px', fontSize: '15px' }}>
-        <UserAvatar emailID={emailID}/>
-      </div>
-    </div>
+          style={{
+            display: 'flex',
+            alignItems: 'center', // Vertically center elements within this container
+          }}
+        >
+          <div style={{ paddingRight: '10px', fontSize: '0.75rem', color: '#1e3446' }}>
+            {emailID}
+          </div>
+          <div style={{ paddingRight: '10px', fontSize: '15px' }}>
+            <UserAvatar emailID={emailID} />
+          </div>
+        </div>
       </div>
     ),
     botAvatar: (props) => <BotAvatar {...props} />,
-    userAvatar: (props) => <UserAvatar emailID={emailID}/>,
+    userAvatar: (props) => <UserAvatar emailID={emailID} />,
   },
   state: {
     history: [],
