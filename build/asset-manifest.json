@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.01ff15b1.css",
-    "main.js": "/static/js/main.6ed3dc4b.js",
+    "main.css": "/static/css/main.b5af33fa.css",
+    "main.js": "/static/js/main.2f8530ed.js",
     "static/js/787.5b255ad6.chunk.js": "/static/js/787.5b255ad6.chunk.js",
-    "static/media/shikhar_logo-removebg-preview.png": "/static/media/shikhar_logo-removebg-preview.ea43b94dd003925b7cd0.png",
-    "static/media/Piramal-Finance-Logo-removebg-preview.png": "/static/media/Piramal-Finance-Logo-removebg-preview.434e697d33606a71e714.png",
+    "static/media/light-bg.png": "/static/media/light-bg.4ece94da4d296cd7bd78.png",
+    "static/media/new-background.png": "/static/media/new-background.40ab84887655d5b473ca.png",
+    "static/media/shikhar_logo-removebg-preview.png": "/static/media/shikhar_logo-removebg-preview.728c03dcc86839b57dd2.png",
     "index.html": "/index.html",
-    "main.01ff15b1.css.map": "/static/css/main.01ff15b1.css.map",
-    "main.6ed3dc4b.js.map": "/static/js/main.6ed3dc4b.js.map",
+    "main.b5af33fa.css.map": "/static/css/main.b5af33fa.css.map",
+    "main.2f8530ed.js.map": "/static/js/main.2f8530ed.js.map",
     "787.5b255ad6.chunk.js.map": "/static/js/787.5b255ad6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01ff15b1.css",
-    "static/js/main.6ed3dc4b.js"
+    "static/css/main.b5af33fa.css",
+    "static/js/main.2f8530ed.js"
   ]
 }

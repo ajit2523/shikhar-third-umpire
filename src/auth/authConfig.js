@@ -2,9 +2,9 @@ import { LogLevel } from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
-        clientId: 'f2da1577-c25b-48bc-bc42-ad17e7a39d21',
+        clientId: '9b9e0a83-a8c8-4fe1-a22e-936aa820b311',
         authority: 'https://login.microsoftonline.com/b8fb8be4-f50e-4989-96c3-41eb135ec147',
-        redirectUri: 'https://dev3270.d2tajnev4kg8yr.amplifyapp.com/', // Redirect URI configured in Azure AD
+        redirectUri: 'https://shikhar3rd.d3sqfb6vimwvo.amplifyapp.com/', // Redirect URI configured in Azure AD
     },
     cache: {
         cacheLocation: "sessionStorage",

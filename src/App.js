@@ -8,17 +8,29 @@ import { InteractionType } from '@azure/msal-browser';
 import ActionProvider from './ActionProvider';
 import MessageParser from './MessageParser';
 import config, { setEmailID } from './config';
-import { setEmail } from './MessageParser'; 
+import { setEmail } from './ActionProvider';
+import { createContext } from 'react';
+
+export const ThemeContext = createContext('dark');
+
+const generateSessionID = () => {
+  const randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  const timestamp = new Date().getTime();
+  const sessionID = `${randomString}_${timestamp}`;
+  return sessionID;
+}
+
+export const currentSessionID = generateSessionID();
 
 function App() {
   useMsalAuthentication(InteractionType.Redirect);
   const [m_strUser, setm_strUser] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
-  function toggleLoading(isLoading) {
-    setIsLoading(isLoading);
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
-  
+
   function Render() {
 
     const { accounts } = useMsal();
@@ -35,27 +47,32 @@ function App() {
     setEmailID(m_strUser);
     setEmail(m_strUser);
     return (
-      <div className="App">
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className="App" id={theme}>
 
-        <header className="App-header">
-          {/* <Navbar /> */}
-          <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
-        </header>
-      </div>
+          <header className="App-header">
+            {/* <Navbar /> */}
+
+            <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} placeholderText='Type your message here'/>
+          </header>
+        </div>
+      </ThemeContext.Provider>
     );
   }
   else {
-    return <>{Render()}<div style={{ textAlign:'center'}}>Please wait...</div></>
+    return <>{Render()}<div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '15px' }}>Please wait...</div></>
   }
 
   // return (
-  //   <div className="App">
+  //   <ThemeContext.Provider value={{theme, toggleTheme}}>
+  //   <div className="App" id={theme}>
 
   //     <header className="App-header">
   //       {/* <Navbar /> */}
-  //       <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+  //       <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} placeholderText="Type your message here"/>
   //     </header>
   //   </div>
+  //   </ThemeContext.Provider>
   // );
 }
 
