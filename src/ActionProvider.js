@@ -29,7 +29,7 @@ class ActionProvider {
     async clientMessage(clientMessage) {
         this.addMessageToState(clientMessage);
         const apiUrl = 'https://iqscvy83t7.execute-api.ap-south-1.amazonaws.com/shik/shikhar';
-        const apiKey = 'EQrUArymZI6dEugG2aIkw8Zc9PbZvoet6A7VePxA';
+        const apiKey = '';
         const email = emailID.toLowerCase();
         console.log(email);
         const requestData = {
