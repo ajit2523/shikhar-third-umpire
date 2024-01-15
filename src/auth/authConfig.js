@@ -2,7 +2,7 @@ import { LogLevel } from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
-        clientId: '9b9e0a83-a8c8-4fe1-a22e-936aa820b311',
+        clientId: '',
         authority: 'https://login.microsoftonline.com/b8fb8be4-f50e-4989-96c3-41eb135ec147',
         redirectUri: 'https://shikhar3rd.d3sqfb6vimwvo.amplifyapp.com/', // Redirect URI configured in Azure AD
     },
